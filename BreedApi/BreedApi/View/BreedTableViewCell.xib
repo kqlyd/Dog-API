@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="BreedTableViewCell" customModule="BreedApi" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WpI-17-ojz">
+                        <rect key="frame" x="16" y="4" width="36" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="WpI-17-ojz" secondAttribute="height" multiplier="1:1" id="iPc-lu-fj3"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="LabelLabelLabelLabelLabelLa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HEO-Mp-ROv">
+                        <rect key="frame" x="60" y="4" width="208" height="36"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ex2-eh-c8G">
+                        <rect key="frame" x="24" y="12" width="20" height="20"/>
+                    </activityIndicatorView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Ex2-eh-c8G" secondAttribute="bottom" constant="12" id="7sM-Gx-YlR"/>
+                    <constraint firstAttribute="bottom" secondItem="WpI-17-ojz" secondAttribute="bottom" constant="4" id="PnP-U0-e6l"/>
+                    <constraint firstAttribute="bottom" secondItem="HEO-Mp-ROv" secondAttribute="bottom" constant="4" id="T1v-yC-4A9"/>
+                    <constraint firstItem="WpI-17-ojz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="TbC-rl-Nhz"/>
+                    <constraint firstItem="HEO-Mp-ROv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="V5I-Aj-hxK"/>
+                    <constraint firstItem="Ex2-eh-c8G" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="YAo-hi-FTd"/>
+                    <constraint firstItem="Ex2-eh-c8G" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="dgC-fk-S76"/>
+                    <constraint firstItem="WpI-17-ojz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="p53-Vg-zuD"/>
+                    <constraint firstItem="HEO-Mp-ROv" firstAttribute="leading" secondItem="WpI-17-ojz" secondAttribute="trailing" constant="8" id="rTr-tQ-Y1e"/>
+                    <constraint firstAttribute="trailing" secondItem="HEO-Mp-ROv" secondAttribute="trailing" constant="52" id="rWN-vn-tac"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="activityIndicator" destination="Ex2-eh-c8G" id="Dzl-1o-Rz9"/>
+                <outlet property="breedName" destination="HEO-Mp-ROv" id="iRY-pd-B2K"/>
+                <outlet property="imageBreed" destination="WpI-17-ojz" id="VOS-l5-mQG"/>
+            </connections>
+            <point key="canvasLocation" x="71.014492753623188" y="121.875"/>
+        </tableViewCell>
+    </objects>
+</document>
