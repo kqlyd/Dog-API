@@ -33,6 +33,7 @@
                     </activityIndicatorView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="HEO-Mp-ROv" firstAttribute="leading" secondItem="WpI-17-ojz" secondAttribute="trailing" constant="8" id="54Y-x8-V1D"/>
                     <constraint firstAttribute="bottom" secondItem="Ex2-eh-c8G" secondAttribute="bottom" constant="12" id="7sM-Gx-YlR"/>
                     <constraint firstAttribute="bottom" secondItem="WpI-17-ojz" secondAttribute="bottom" constant="4" id="PnP-U0-e6l"/>
                     <constraint firstAttribute="bottom" secondItem="HEO-Mp-ROv" secondAttribute="bottom" constant="4" id="T1v-yC-4A9"/>

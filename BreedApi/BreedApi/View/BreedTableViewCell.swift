@@ -39,6 +39,7 @@ class BreedTableViewCell: UITableViewCell {
             activityIndicator.startAnimating()
         } else {
             activityIndicator.stopAnimating()
+            activityIndicator.isHidden = true
         }
     }
     

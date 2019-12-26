@@ -13,10 +13,14 @@ import Foundation
 
 class ViewController: UITableViewController {
     
-
-    
     
     let network = NetworkHelper(reachability: FakeReachability(isReachable: true))
+    
+    let myRefreshConstrol: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(downloadData), for: .valueChanged)
+        return refreshControl
+    }()
     
     enum CellIdentifiers: String {
         case BreedTableViewCell
@@ -28,12 +32,16 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.refreshControl = myRefreshConstrol
+//        tableView.refreshControl = UIRefreshControl()
+//        tableView.refreshControl?.addTarget(self, action: #selector(downloadData), for: .valueChanged)
+
         tableView.register(UINib(nibName: CellIdentifiers.BreedTableViewCell.rawValue, bundle: nil), forCellReuseIdentifier:
         CellIdentifiers.BreedTableViewCell.rawValue)
-        dowloadData()
+        downloadData()
     }
     
-    func dowloadData() {
+    @objc func downloadData() {
         _ = network.load(resource: ResourceFactory().createResource(), completion: { [weak self] (result) in
             switch result{
             case .success(let data):
@@ -53,7 +61,11 @@ class ViewController: UITableViewController {
                 }
                 DispatchQueue.main.async { [weak self] in
                     self?.tableView.reloadData()
+                    self?.refreshControl?.endRefreshing()
                 }
+                //self.updateView()
+                
+                //self.activityIndicator.stopAnimating()
             case .failure(let error):
                 print(error)
             }
